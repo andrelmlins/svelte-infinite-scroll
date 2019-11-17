@@ -6,7 +6,7 @@ import pkg from "./package.json";
 export default [
   {
     input: "src/index.svelte",
-    output: { file: pkg.main, format: "umd", name: "FullScreen" },
+    output: { file: pkg.main, format: "umd", name: "InfiniteScroll" },
     plugins: [svelte(), resolve(), commonjs()]
   },
   {
