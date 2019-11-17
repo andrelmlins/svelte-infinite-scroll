@@ -1,30 +1,65 @@
 <script>
-	export let name;
+  import SvelteInfiniteScroll from "svelte-infinite-scroll";
+  import allCountries from "./countries.js";
+
+  let page = 0;
+  let size = 20;
+  let countries = [];
+
+  $: countries = [
+    ...countries,
+    ...allCountries.splice(size * page, size * (page + 1) - 1)
+  ];
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-</main>
-
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 2px black;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  ul {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    border-radius: 2px;
+    width: 400px;
+    max-width: 40%;
+    background-color: white;
+    max-height: 400px;
+    overflow-x: scroll;
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 15px;
+    box-sizing: border-box;
+    transition: 0.2s all;
+    font-size: 14px;
+  }
+
+  li:hover {
+    background-color: #eeeeee;
+  }
 </style>
+
+<main>
+  <h1>React Infinite Scroll</h1>
+  <ul>
+    {#each countries as country}
+      <li>{country.name}</li>
+    {/each}
+    <SvelteInfiniteScroll threshold={100} on:loadMore={() => page++} />
+  </ul>
+</main>
