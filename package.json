@@ -1,0 +1,17 @@
+{
+  "name": "svelte-infinite-scroll",
+  "version": "0.1.0",
+  "description": "Infinite Scroll Component to Svelte",
+  "main": "index.js",
+  "repository": "https://github.com/andrelmlins/svelte-infinite-scroll",
+  "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "rollup": "^1.27.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.1",
+    "svelte": "^3.14.1"
+  }
+}
