@@ -25,6 +25,12 @@
   h1 {
     color: white;
     text-shadow: 1px 1px 2px black;
+    margin: 0;
+  }
+
+  h4 {
+    color: white;
+    margin: 10px 0px;
   }
 
   ul {
@@ -55,7 +61,8 @@
 </style>
 
 <main>
-  <h1>React Infinite Scroll</h1>
+  <h1>Svelte Infinite Scroll</h1>
+  <h4>Infinite Scroll Component to Svelte</h4>
   <ul>
     {#each countries as country}
       <li>{country.name}</li>
