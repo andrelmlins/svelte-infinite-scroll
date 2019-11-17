@@ -27,18 +27,32 @@ yarn install && yarn start
 ```js
 <script>
   import SvelteInfiniteScroll from "svelte-infinite-scroll";
+  import allCountries from "./countries.js";
+
+  let page = 0;
+  let size = 20;
+  let countries = [];
+
+  $: countries = [
+    ...countries,
+    ...allCountries.splice(size * page, size * (page + 1) - 1)
+  ];
 </script>
 
-<div
-  style="width:500px; height:500px;
-  overflow-y:scroll;background:red;padding:20px">
-  <div style="width:500px; height:900px; overflow-y:scroll; background:green" />
-  <SvelteInfiniteScroll
-    threshold={100}
-    on:loadMore={() => {
-      console.log('load');
-    }} />
-</div>
+<style>
+  ul {
+    width: 400px;
+    max-height: 400px;
+    overflow-x: scroll;
+  }
+</style>
+
+<ul>
+  {#each countries as country}
+    <li>{country.name}</li>
+  {/each}
+  <SvelteInfiniteScroll threshold={100} on:loadMore={() => page++} />
+</ul>
 ```
 
 ## Properties
