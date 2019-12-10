@@ -13,11 +13,11 @@
     "README.md"
   ],
   "devDependencies": {
-    "rollup": "^1.27.8",
+    "rollup": "^1.27.9",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "svelte": "^3.16.0"
+    "svelte": "^3.16.1"
   },
   "scripts": {
     "build": "rollup -c",
