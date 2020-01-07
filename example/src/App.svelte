@@ -72,5 +72,7 @@
       threshold={100}
       on:loadMore={() => page++} />
   </ul>
-  <h5>Loaded: {countries.length === allCountries.length ? 'Yes' : 'Not'}</h5>
+  <h5>
+    Loaded items: {countries.length === allCountries.length ? 'Yes' : 'Not'}
+  </h5>
 </main>
