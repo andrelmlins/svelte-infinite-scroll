@@ -68,7 +68,7 @@
       <li>{country.name}</li>
     {/each}
     <SvelteInfiniteScroll
-      hasMore={countries.length === allCountries.length}
+      hasMore={countries.length < allCountries.length}
       threshold={100}
       on:loadMore={() => page++} />
   </ul>
