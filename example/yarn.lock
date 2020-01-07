@@ -1453,10 +1453,10 @@ supports-color@^6.1.0:
   dependencies:
     has-flag "^3.0.0"
 
-svelte-infinite-scroll@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/svelte-infinite-scroll/-/svelte-infinite-scroll-0.1.0.tgz#b5964e42881b5ff69bc2eb06542a2b056305169a"
-  integrity sha512-Qp/BEaevEXkKByUmHKkdlTASWSy/Uy67AVHFzSvGDLwK3gdn9I2nq2JaKSOR3KCGT7QPjOB8tIfh0dpGaaHzYQ==
+svelte-infinite-scroll@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/svelte-infinite-scroll/-/svelte-infinite-scroll-0.1.1.tgz#88d0ca1ce53014dbef03baf8d79cd9e2a918ed9a"
+  integrity sha512-efOgx1hojMvmHaksNV0ktvgErzlSpsEuB0RbURszxBhHozkFOObbQugNHATaIROSA60weTxzpX+aHe/JUpvCwg==
 
 svelte@^3.16.5:
   version "3.16.5"
