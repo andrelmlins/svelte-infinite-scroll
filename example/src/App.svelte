@@ -8,7 +8,7 @@
 
   $: countries = [
     ...countries,
-    ...allCountries.splice(size * page, size * (page + 1) - 1)
+    ...allCountries.slice(size * page, size * (page + 1))
   ];
 </script>
 
@@ -67,6 +67,10 @@
     {#each countries as country}
       <li>{country.name}</li>
     {/each}
-    <SvelteInfiniteScroll threshold={100} on:loadMore={() => page++} />
+    <SvelteInfiniteScroll
+      hasMore={countries.length === allCountries.length}
+      threshold={100}
+      on:loadMore={() => page++} />
   </ul>
+  <h5>Loaded: {countries.length === allCountries.length ? 'Yes' : 'Not'}</h5>
 </main>
