@@ -3,6 +3,7 @@
 
   export let threshold = 0;
   export let elementScroll;
+  export let hasMore = true;
 
   const dispatch = createEventDispatcher();
   let isLoadMore = false;
@@ -22,7 +23,7 @@
       e.target.scrollHeight - e.target.clientHeight - e.target.scrollTop;
 
     if (offset <= threshold) {
-      if (!isLoadMore) {
+      if (!isLoadMore && hasMore) {
         dispatch("loadMore");
       }
       isLoadMore = true;

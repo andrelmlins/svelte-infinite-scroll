@@ -57,13 +57,14 @@ yarn install && yarn start
 
 ## Properties
 
-Raw component props (before transform):
+Component props:
 
-| Prop          | Type   | Description                |
-| ------------- | ------ | -------------------------- |
-| threshold     | number | Threshold to call loadMore |
-| elementScroll | node   | Element to bind scroll     |
-| loadMore      | func   | Call with offset           |
+| Prop          | Type   | Description                               |
+| ------------- | ------ | ----------------------------------------- |
+| threshold     | number | Threshold to call loadMore                |
+| elementScroll | node   | Element to bind scroll                    |
+| hasMore       | bool   | Tells you if there are more items to load |
+| loadMore      | func   | Call with offset                          |
 
 ## NPM Statistics
 
