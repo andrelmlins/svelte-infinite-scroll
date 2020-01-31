@@ -13,6 +13,7 @@
     "README.md"
   ],
   "devDependencies": {
+    "sirv-cli": "^0.4.4",
     "rollup": "^1.31.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-livereload": "^1.0.0",
@@ -23,7 +24,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "prepublishOnly": "npm run build"
+    "dev": "rollup -c -w",
+    "start": "sirv public"
   },
   "bugs": {
     "url": "https://github.com/andrelmlins/svelte-infinite-scroll/issues"

@@ -1,5 +1,5 @@
 <script>
-  import SvelteInfiniteScroll from "svelte-infinite-scroll";
+  import SvelteInfiniteScroll from "../lib/index.svelte";
   import allCountries from "./countries.js";
 
   let page = 0;
