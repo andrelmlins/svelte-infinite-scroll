@@ -15,15 +15,15 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/svelte": "^1.11.0",
-    "rollup": "^1.31.0",
+    "rollup": "^1.31.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.2.0",
     "sirv-cli": "^0.4.4",
-    "svelte": "^3.18.1",
-    "svelte-jester": "^1.0.3"
+    "svelte": "^3.18.2",
+    "svelte-jester": "^1.0.4"
   },
   "scripts": {
     "build": "rollup -c",
