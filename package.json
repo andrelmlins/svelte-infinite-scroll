@@ -1,6 +1,6 @@
 {
   "name": "svelte-infinite-scroll",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Infinite Scroll Component to Svelte",
   "repository": "https://github.com/andrelmlins/svelte-infinite-scroll",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
