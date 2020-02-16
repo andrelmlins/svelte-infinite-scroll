@@ -19,7 +19,7 @@ Local demo:
 ```
 git clone https://github.com/andrelmlins/svelte-infinite-scroll.git
 cd svelte-infinite-scroll
-yarn install && yarn start
+yarn && yarn start
 ```
 
 ## Examples
