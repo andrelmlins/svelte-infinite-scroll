@@ -33,7 +33,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "sirv public",
-    "test": "jest src/lib"
+    "test": "jest src/lib",
+    "coverage": "npm run test --coverage"
   },
   "bugs": {
     "url": "https://github.com/andrelmlins/svelte-infinite-scroll/issues"

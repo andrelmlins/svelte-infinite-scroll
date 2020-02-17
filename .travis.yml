@@ -10,6 +10,8 @@ script:
 
 jobs:
   include:
+    - stage: test
+      script: yarn coverage
     - stage: npm release
       if: tag IS present
       node_js: "8"
