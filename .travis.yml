@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-  - "8"
   - "10"
+  - "12"
 cache: yarn
 
 install: yarn
@@ -14,7 +14,7 @@ jobs:
       script: yarn coverage
     - stage: npm release
       if: tag IS present
-      node_js: "8"
+      node_js: "10"
       script: yarn build
       deploy:
         provider: npm
