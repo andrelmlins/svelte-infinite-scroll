@@ -13,8 +13,12 @@
     "README.md"
   ],
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/svelte": "^1.11.0",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
     "rollup": "^1.31.1",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-livereload": "^1.0.0",
@@ -35,7 +39,11 @@
     "url": "https://github.com/andrelmlins/svelte-infinite-scroll/issues"
   },
   "jest": {
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
     "transform": {
+      "^.+\\.js$": "babel-jest",
       "^.+\\.svelte$": "svelte-jester"
     },
     "moduleFileExtensions": [
