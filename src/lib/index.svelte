@@ -33,10 +33,12 @@
   };
 
   onDestroy(() => {
-    const element = elementScroll ? elementScroll : component.parentNode;
+    if (component || elementScroll) {
+      const element = elementScroll ? elementScroll : component.parentNode;
 
-    element.removeEventListener("scroll", null);
-    element.removeEventListener("resize", null);
+      element.removeEventListener("scroll", null);
+      element.removeEventListener("resize", null);
+    }
   });
 </script>
 
