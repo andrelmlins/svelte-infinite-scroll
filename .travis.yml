@@ -15,7 +15,9 @@ jobs:
     - stage: npm release
       if: tag IS present
       node_js: "10"
-      script: yarn build
+      script:
+        - yarn build
+        - cp src/lib/index.svelte dist/index.svelte
       deploy:
         provider: npm
         email: $EMAIL_ADDRESS

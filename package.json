@@ -5,6 +5,7 @@
   "repository": "https://github.com/andrelmlins/svelte-infinite-scroll",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "license": "MIT",
+  "svelte": "dist/index.svelte",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "homepage": "https://svelte-infinite-scroll.netlify.com/",
