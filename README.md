@@ -66,6 +66,16 @@ Component props:
 | hasMore       | bool   | Tells you if there are more items to load |
 | loadMore      | func   | Call with offset                          |
 
+## Use with sapper
+
+When using Svelte components installed from npm, Svelte needs the original component source. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).
+
+Install as `devDependency` or use the original component as below:
+
+```js
+import SvelteInfiniteScroll from "svelte-infinite-scroll/index.svelte";
+```
+
 ## NPM Statistics
 
 Download stats for this NPM package
