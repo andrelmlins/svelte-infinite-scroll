@@ -59,12 +59,13 @@ yarn && yarn start
 
 Component props:
 
-| Prop          | Type   | Description                               |
-| ------------- | ------ | ----------------------------------------- |
-| threshold     | number | Threshold to call loadMore                |
-| elementScroll | node   | Element to bind scroll                    |
-| hasMore       | bool   | Tells you if there are more items to load |
-| loadMore      | func   | Call with offset                          |
+| Prop          | Type   | Default | Description                               |
+| ------------- | ------ | ------- | ----------------------------------------- |
+| threshold     | number | 0       | Threshold to call loadMore                |
+| elementScroll | node   | -       | Element to bind scroll                    |
+| hasMore       | bool   | true    | Tells you if there are more items to load |
+| loadMore      | func   | --      | Call with offset                          |
+| horizontal    | bool   | false   | Changing orientation                      |
 
 ## Use with sapper
 
