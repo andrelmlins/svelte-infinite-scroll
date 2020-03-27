@@ -2,6 +2,7 @@
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
 
   export let threshold = 0;
+  export let horizontal = false;
   export let elementScroll;
   export let hasMore = true;
 
@@ -19,8 +20,11 @@
   }
 
   const onScroll = e => {
-    const offset =
-      e.target.scrollHeight - e.target.clientHeight - e.target.scrollTop;
+    const element = e.target;
+
+    const offset = horizontal
+      ? e.target.scrollWidth - e.target.clientWidth - e.target.scrollLeft
+      : e.target.scrollHeight - e.target.clientHeight - e.target.scrollTop;
 
     if (offset <= threshold) {
       if (!isLoadMore && hasMore) {
