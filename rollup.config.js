@@ -38,12 +38,12 @@ export default [
     }
   },
   {
-    input: "src/lib/index.svelte",
+    input: "src/lib/InfiniteScroll.svelte",
     output: { file: pkg.main, format: "umd", name: "InfiniteScroll" },
     plugins: [svelte(), resolve(), commonjs()]
   },
   {
-    input: "src/lib/index.svelte",
+    input: "src/lib/InfiniteScroll.svelte",
     output: { file: pkg.module, format: "es" },
     external: ["svelte/internal"],
     plugins: [svelte(), commonjs()]

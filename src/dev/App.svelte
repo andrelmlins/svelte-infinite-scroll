@@ -1,5 +1,5 @@
 <script>
-  import SvelteInfiniteScroll from "../lib/index.svelte";
+  import InfiniteScroll from "../lib/InfiniteScroll.svelte";
   import allCountries from "./countries.js";
 
   let page = 0;
@@ -67,7 +67,7 @@
     {#each countries as country}
       <li>{country.name}</li>
     {/each}
-    <SvelteInfiniteScroll
+    <InfiniteScroll
       hasMore={countries.length < allCountries.length}
       threshold={100}
       on:loadMore={() => page++} />

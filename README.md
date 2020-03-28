@@ -12,6 +12,8 @@ npm i svelte-infinite-scroll
 yarn add svelte-infinite-scroll
 ```
 
+<em>Note: to use this library in sapper, install as devDependency. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).</em>
+
 ## Demo [Link](https://svelte-infinite-scroll.netlify.com/)
 
 Local demo:
@@ -23,6 +25,8 @@ yarn && yarn start
 ```
 
 ## Examples
+
+An example of how to use the library
 
 ```js
 <script>
@@ -68,14 +72,6 @@ Component props:
 | horizontal    | bool   | false   | Changing orientation                      |
 
 ## Use with sapper
-
-When using Svelte components installed from npm, Svelte needs the original component source. See the [link](https://github.com/sveltejs/sapper-template#using-external-components).
-
-Install as `devDependency` or use the original component as below:
-
-```js
-import SvelteInfiniteScroll from "svelte-infinite-scroll/index.svelte";
-```
 
 ## NPM Statistics
 

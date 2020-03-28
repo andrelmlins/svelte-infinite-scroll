@@ -1,17 +1,17 @@
 {
   "name": "svelte-infinite-scroll",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Infinite Scroll Component to Svelte",
   "repository": "https://github.com/andrelmlins/svelte-infinite-scroll",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
   "license": "MIT",
-  "svelte": "dist/index.svelte",
+  "svelte": "src/lib/InfiniteScroll.svelte",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
   "homepage": "https://svelte-infinite-scroll.netlify.com/",
   "files": [
-    "dist",
-    "README.md"
+    "src/lib/InfiniteScroll.svelte",
+    "dist"
   ],
   "devDependencies": {
     "@babel/core": "^7.8.7",
