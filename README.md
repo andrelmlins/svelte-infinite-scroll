@@ -71,8 +71,6 @@ Component props:
 | loadMore      | func   | --      | Call with offset                          |
 | horizontal    | bool   | false   | Changing orientation                      |
 
-## Use with sapper
-
 ## NPM Statistics
 
 Download stats for this NPM package
