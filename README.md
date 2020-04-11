@@ -75,7 +75,7 @@ Component props:
 | hasMore       | bool   | true    | Tells you if there are more items to load |
 | loadMore      | func   | --      | Call with offset                          |
 | horizontal    | bool   | false   | Changing orientation                      |
-| reverse       | bool   | false   | Reveser scroll direction                  |
+| reverse       | bool   | false   | Revese scroll direction                   |
 
 ## NPM Statistics
 
