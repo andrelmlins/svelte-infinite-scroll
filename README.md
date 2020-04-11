@@ -62,7 +62,7 @@ An example of how to use the library
 ### Another Examples
 
 - Infinite scroll with requests | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/kilianso)
-- Infinite scroll reverse | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/andrelmlins)
+- Infinite scroll reverse | [Link](https://svelte.dev/repl/36d00aa55c7c4ff68914ce314f4e1ca4) | [Author](https://github.com/andrelmlins)
 
 ## Properties
 
@@ -75,6 +75,7 @@ Component props:
 | hasMore       | bool   | true    | Tells you if there are more items to load |
 | loadMore      | func   | --      | Call with offset                          |
 | horizontal    | bool   | false   | Changing orientation                      |
+| reverse       | bool   | false   | Reveser scroll direction                  |
 
 ## NPM Statistics
 
