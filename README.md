@@ -59,6 +59,11 @@ An example of how to use the library
 </ul>
 ```
 
+### Another Examples
+
+- Infinite scroll with requests | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/kilianso)
+- Infinite scroll reverse | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/andrelmlins)
+
 ## Properties
 
 Component props:
