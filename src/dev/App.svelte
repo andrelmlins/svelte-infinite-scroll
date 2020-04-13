@@ -20,6 +20,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   h1 {
@@ -57,6 +59,13 @@
 
   li:hover {
     background-color: #eeeeee;
+  }
+
+  @media screen and (max-width: 800px) {
+    ul {
+      max-width: 100%;
+      margin-right: 0px;
+    }
   }
 </style>
 
