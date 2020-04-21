@@ -72,6 +72,7 @@ Component props:
 | ------------- | ------ | ------- | ----------------------------------------- |
 | threshold     | number | 0       | Threshold to call loadMore                |
 | elementScroll | node   | -       | Element to bind scroll                    |
+| window        | bool   | false   | Bind scroll in window                     |
 | hasMore       | bool   | true    | Tells you if there are more items to load |
 | loadMore      | func   | --      | Call with offset                          |
 | horizontal    | bool   | false   | Changing orientation                      |

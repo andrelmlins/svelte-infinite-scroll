@@ -6,6 +6,7 @@
   export let elementScroll = null;
   export let hasMore = true;
   export let reverse = false;
+  export let window = false;
 
   const dispatch = createEventDispatcher();
   let isLoadMore = false;
@@ -13,8 +14,8 @@
   let beforeScrollHeight;
   let beforeScrollTop;
 
-  $: if (component || elementScroll) {
-    const element = elementScroll ? elementScroll : component.parentNode;
+  $: if (component || elementScroll || window) {
+    const element = getElement();
 
     if (reverse) {
       element.scrollTop = element.scrollHeight;
@@ -25,7 +26,7 @@
   }
 
   $: if (isLoadMore && reverse) {
-    const element = elementScroll ? elementScroll : component.parentNode;
+    const element = getElement();
 
     element.scrollTop =
       element.scrollHeight - beforeScrollHeight + beforeScrollTop;
@@ -34,15 +35,7 @@
   const onScroll = e => {
     if (!hasMore) return;
 
-    let offset = 0;
-
-    if (reverse) {
-      offset = horizontal ? e.target.scrollLeft : e.target.scrollTop;
-    } else {
-      offset = horizontal
-        ? e.target.scrollWidth - e.target.clientWidth - e.target.scrollLeft
-        : e.target.scrollHeight - e.target.clientHeight - e.target.scrollTop;
-    }
+    const offset = calcOffset(e, reverse, horizontal);
 
     if (offset <= threshold) {
       if (!isLoadMore && hasMore) {
@@ -57,9 +50,33 @@
     }
   };
 
+  const calcOffset = (e, reverse, horizontal) => {
+    const element = e.target.documentElement
+      ? e.target.documentElement
+      : e.target;
+
+    if (reverse) {
+      return horizontal ? element.scrollLeft : element.scrollTop;
+    } else {
+      return horizontal
+        ? element.scrollWidth - element.clientWidth - element.scrollLeft
+        : element.scrollHeight - element.clientHeight - element.scrollTop;
+    }
+  };
+
+  const getElement = () => {
+    if (window) {
+      return document;
+    } else if (elementScroll) {
+      return elementScroll;
+    }
+
+    return component.parentNode;
+  };
+
   onDestroy(() => {
     if (component || elementScroll) {
-      const element = elementScroll ? elementScroll : component.parentNode;
+      const element = getElement();
 
       element.removeEventListener("scroll", null);
       element.removeEventListener("resize", null);
