@@ -68,15 +68,20 @@ An example of how to use the library
 
 Component props:
 
-| Prop          | Type   | Default | Description                               |
-| ------------- | ------ | ------- | ----------------------------------------- |
-| threshold     | number | 0       | Threshold to call loadMore                |
-| elementScroll | node   | -       | Element to bind scroll                    |
-| window        | bool   | false   | Bind scroll in window                     |
-| hasMore       | bool   | true    | Tells you if there are more items to load |
-| loadMore      | func   | --      | Call with offset                          |
-| horizontal    | bool   | false   | Changing orientation                      |
-| reverse       | bool   | false   | Revese scroll direction                   |
+| Prop            | Type   | Default | Description                               |
+| --------------- | ------ | ------- | ----------------------------------------- |
+| `threshold`     | number | 0       | Threshold to call loadMore                |
+| `elementScroll` | node   | -       | Element to bind scroll                    |
+| `window`        | bool   | false   | Bind scroll in window                     |
+| `hasMore`       | bool   | true    | Tells you if there are more items to load |
+| `horizontal`    | bool   | false   | Changing orientation                      |
+| `reverse`       | bool   | false   | Revese scroll direction                   |
+
+## Events
+
+| Event      | Description                               |
+| ---------- | ----------------------------------------- |
+| `loadMore` | Tells you if there are more items to load |
 
 ## NPM Statistics
 
