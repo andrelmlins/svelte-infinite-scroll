@@ -75,12 +75,9 @@
   };
 
   onDestroy(() => {
-    if (component || elementScroll) {
       const element = getElement();
-
-      element.removeEventListener("scroll", null);
-      element.removeEventListener("resize", null);
-    }
+      element.removeEventListener("scroll", onScroll);
+      element.removeEventListener("resize", onScroll);
   });
 </script>
 
