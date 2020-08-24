@@ -11,7 +11,7 @@ script:
 jobs:
   include:
     - stage: test
-      script: yarn coverage
+      script: yarn test
     - stage: npm release
       if: tag IS present
       node_js: "10"
