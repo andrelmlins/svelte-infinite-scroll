@@ -28,7 +28,7 @@
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^0.4.4",
     "svelte": "^3.24.1",
-    "svelte-jester": "^1.1.2"
+    "svelte-jester": "^1.1.0"
   },
   "scripts": {
     "build": "rollup -c",
@@ -47,13 +47,7 @@
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.svelte$": [
-        "svelte-jester",
-        {
-          "preprocess": false,
-          "debug": false,
-          "compilerOptions": {},
-          "rootMode": ""
-        }
+        "svelte-jester"
       ]
     },
     "moduleFileExtensions": [
