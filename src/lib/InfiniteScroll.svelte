@@ -14,9 +14,19 @@
   let beforeScrollHeight;
   let beforeScrollTop;
 
-  $: if (component || elementScroll || window) {
-    const element = getElement();
+  let element;
 
+  onMount(() => {
+    if (window) {
+      element = document;
+    } else if (elementScroll) {
+      element = elementScroll;
+    }
+
+    element = component.parentNode;
+  });
+
+  $: if (element) {
     if (reverse) {
       element.scrollTop = element.scrollHeight;
     }
@@ -26,8 +36,6 @@
   }
 
   $: if (isLoadMore && reverse) {
-    const element = getElement();
-
     element.scrollTop =
       element.scrollHeight - beforeScrollHeight + beforeScrollTop;
   }
@@ -71,13 +79,14 @@
       return elementScroll;
     }
 
-    return component.parentNode;
+    return component && component.parentNode;
   };
 
   onDestroy(() => {
-      const element = getElement();
+    if (element) {
       element.removeEventListener("scroll", onScroll);
       element.removeEventListener("resize", onScroll);
+    }
   });
 </script>
 
