@@ -21,9 +21,9 @@
       element = document;
     } else if (elementScroll) {
       element = elementScroll;
+    } else {
+      element = component.parentNode;
     }
-
-    element = component.parentNode;
   });
 
   $: if (element) {
