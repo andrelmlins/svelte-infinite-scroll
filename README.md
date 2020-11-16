@@ -61,13 +61,13 @@ An example of how to use the library:
 </ul>
 ```
 
-### In Sapper applications
+In Sapper applications:
 
 ```js
 import InfiniteScroll from "svelte-infinite-scroll/src/lib/InfiniteScroll.svelte";
 ```
 
-### Another Examples
+### Another examples
 
 - Infinite scroll with requests | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/kilianso)
 - Infinite scroll reverse | [Link](https://svelte.dev/repl/36d00aa55c7c4ff68914ce314f4e1ca4) | [Author](https://github.com/andrelmlins)
@@ -91,7 +91,7 @@ Component props:
 | ---------- | ----------------------------------------- |
 | `loadMore` | Tells you if there are more items to load |
 
-## NPM Statistics
+## NPM statistics
 
 Download stats for this NPM package.
 
