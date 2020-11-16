@@ -32,7 +32,7 @@ An example of how to use the library:
 
 ```js
 <script>
-  import SvelteInfiniteScroll from "svelte-infinite-scroll";
+  import InfiniteScroll from "svelte-infinite-scroll";
   import allCountries from "./countries.js";
 
   let page = 0;
@@ -57,7 +57,7 @@ An example of how to use the library:
   {#each countries as country}
     <li>{country.name}</li>
   {/each}
-  <SvelteInfiniteScroll threshold={100} on:loadMore={() => page++} />
+  <InfiniteScroll threshold={100} on:loadMore={() => page++} />
 </ul>
 ```
 
