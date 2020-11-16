@@ -78,4 +78,6 @@
   });
 </script>
 
-<div bind:this={component} class="svelte-infinite-scroll" style="width: 0;" />
+{#if !window && !elementScroll}
+  <div bind:this={component} class="svelte-infinite-scroll" style="width: 0;" />
+{/if}
