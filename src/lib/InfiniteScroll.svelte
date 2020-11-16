@@ -78,4 +78,4 @@
   });
 </script>
 
-<div bind:this={component} style="width:0px" />
+<div bind:this={component} class="svelte-infinite-scroll" style="width: 0;" />
