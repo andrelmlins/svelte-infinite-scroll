@@ -61,12 +61,6 @@ An example of how to use the library:
 </ul>
 ```
 
-In Sapper applications:
-
-```js
-import InfiniteScroll from "svelte-infinite-scroll/src/lib/InfiniteScroll.svelte";
-```
-
 ### Another examples
 
 - Infinite scroll with requests | [Link](https://svelte.dev/repl/4863a658f3584b81bbe3d9f54eb67899) | [Author](https://github.com/kilianso)
