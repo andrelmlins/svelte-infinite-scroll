@@ -29,7 +29,7 @@
       element.scrollHeight - beforeScrollHeight + beforeScrollTop;
   }
 
-  const onScroll = (e) => {
+  const onScroll = e => {
     if (!hasMore) return;
     const offset = calcOffset(e, reverse, horizontal);
     if (offset <= threshold) {
@@ -56,18 +56,14 @@
       : element.scrollHeight - element.clientHeight - element.scrollTop;
   };
 
-  const getElement = () => {
-    if (window) {
-      return document;
-    }
-    if (elementScroll) {
-      return elementScroll;
-    }
-    return component && component.parentNode;
-  };
-
   onMount(() => {
-    element = getElement();
+    if (window) {
+      element = document;
+    } else if (elementScroll) {
+      element = elementScroll;
+    } else {
+      element = component.parentNode;
+    }
   });
 
   onDestroy(() => {
