@@ -16,8 +16,10 @@
   "devDependencies": {
     "@babel/core": "^7.11.4",
     "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-typescript": "^8.2.5",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/svelte": "^3.0.0",
+    "@tsconfig/svelte": "^2.0.1",
     "babel-jest": "^26.3.0",
     "jest": "^26.4.2",
     "rollup": "^2.26.0",
@@ -28,12 +30,11 @@
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^0.4.4",
     "svelte": "^3.32.0",
-    "svelte-jester": "1.1.5",
-    "@rollup/plugin-typescript": "^8.2.5",
-    "@tsconfig/svelte": "^2.0.1",
     "svelte-dts": "^0.3.3",
+    "svelte-jester": "1.1.5",
     "svelte-preprocess": "^4.7.4",
     "svelte-transpile-typescript": "^0.1.2",
+    "ts-jest": "^27.0.4",
     "tslib": "^2.3.0",
     "typescript": "^4.3.5"
   },
@@ -54,8 +55,12 @@
     "transform": {
       "^.+\\.js$": "babel-jest",
       "^.+\\.svelte$": [
-        "svelte-jester"
-      ]
+        "svelte-jester",
+        {
+          "preprocess": true
+        }
+      ],
+      "^.+\\.ts$": "ts-jest"
     },
     "moduleFileExtensions": [
       "js",
