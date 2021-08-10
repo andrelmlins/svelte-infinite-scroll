@@ -1,16 +1,34 @@
-<script>
+<script lang="ts">
   import InfiniteScroll from "../lib/InfiniteScroll.svelte";
   import allCountries from "./countries.js";
 
   let page = 0;
   let size = 20;
-  let countries = [];
+  let countries: { name: string; code: string }[] = [];
 
   $: countries = [
     ...countries,
-    ...allCountries.slice(size * page, size * (page + 1))
+    ...allCountries.slice(size * page, size * (page + 1)),
   ];
 </script>
+
+<main>
+  <h1>Svelte Infinite Scroll</h1>
+  <h4>Infinite Scroll Component to Svelte</h4>
+  <ul>
+    {#each countries as country}
+      <li>{country.name}</li>
+    {/each}
+    <InfiniteScroll
+      hasMore={countries.length < allCountries.length}
+      threshold={100}
+      on:loadMore={() => page++}
+    />
+  </ul>
+  <h5>
+    Loaded items: {countries.length === allCountries.length ? "Yes" : "Not"}
+  </h5>
+</main>
 
 <style>
   main {
@@ -68,20 +86,3 @@
     }
   }
 </style>
-
-<main>
-  <h1>Svelte Infinite Scroll</h1>
-  <h4>Infinite Scroll Component to Svelte</h4>
-  <ul>
-    {#each countries as country}
-      <li>{country.name}</li>
-    {/each}
-    <InfiniteScroll
-      hasMore={countries.length < allCountries.length}
-      threshold={100}
-      on:loadMore={() => page++} />
-  </ul>
-  <h5>
-    Loaded items: {countries.length === allCountries.length ? 'Yes' : 'Not'}
-  </h5>
-</main>

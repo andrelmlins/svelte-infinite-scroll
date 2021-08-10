@@ -1,20 +1,20 @@
-<script>
+<script lang="ts">
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
 
-  export let threshold = 0;
-  export let horizontal = false;
-  export let elementScroll = null;
-  export let hasMore = true;
-  export let reverse = false;
-  export let window = false;
+  export let threshold: number = 0;
+  export let horizontal: boolean = false;
+  export let elementScroll: HTMLElement | null = null;
+  export let hasMore: boolean = true;
+  export let reverse: boolean = false;
+  export let window: boolean = false;
 
-  const dispatch = createEventDispatcher();
+  const dispatch = createEventDispatcher<{ loadMore: never }>();
 
-  let isLoadMore = false;
-  let component;
-  let beforeScrollHeight;
-  let beforeScrollTop;
-  let element;
+  let isLoadMore: boolean = false;
+  let component: HTMLElement;
+  let beforeScrollHeight: number;
+  let beforeScrollTop: number;
+  let element: any | null;
 
   $: if (element) {
     if (reverse) {
@@ -29,14 +29,17 @@
       element.scrollHeight - beforeScrollHeight + beforeScrollTop;
   }
 
-  const onScroll = e => {
+  const onScroll = (e: Event) => {
     if (!hasMore) return;
-    const offset = calcOffset(e, reverse, horizontal);
+
+    const target = e.target as HTMLElement;
+    const offset = calcOffset(target, reverse, horizontal);
+
     if (offset <= threshold) {
       if (!isLoadMore && hasMore) {
         dispatch("loadMore");
-        beforeScrollHeight = e.target.scrollHeight;
-        beforeScrollTop = e.target.scrollTop;
+        beforeScrollHeight = target.scrollHeight;
+        beforeScrollTop = target.scrollTop;
       }
       isLoadMore = true;
     } else {
@@ -44,10 +47,11 @@
     }
   };
 
-  const calcOffset = (e, reverse, horizontal) => {
-    const element = e.target.documentElement
-      ? e.target.documentElement
-      : e.target;
+  const calcOffset = (target: any, reverse: boolean, horizontal: boolean) => {
+    const element: HTMLElement = target.documentElement
+      ? target.documentElement
+      : target;
+
     if (reverse) {
       return horizontal ? element.scrollLeft : element.scrollTop;
     }
