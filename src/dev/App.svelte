@@ -1,6 +1,6 @@
 <script lang="ts">
   import InfiniteScroll from "../lib/InfiniteScroll.svelte";
-  import allCountries from "./countries.js";
+  import allCountries from "./countries.json";
 
   let page = 0;
   let size = 20;

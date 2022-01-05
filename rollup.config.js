@@ -6,6 +6,7 @@ import { terser } from "rollup-plugin-terser";
 import typescript from "@rollup/plugin-typescript";
 import autoPreprocess from "svelte-preprocess";
 import svelteDts from "svelte-dts";
+import json from "@rollup/plugin-json";
 import pkg from "./package.json";
 
 const production = !process.env.ROLLUP_WATCH;
@@ -20,6 +21,7 @@ export default [
       file: "public/build/bundle.js",
     },
     plugins: [
+      json(),
       svelte({
         dev: !production,
         css: (css) => css.write("bundle.css"),
