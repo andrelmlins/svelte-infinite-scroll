@@ -1,6 +1,6 @@
 {
   "name": "svelte-infinite-scroll",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Infinite Scroll Component to Svelte",
   "repository": "https://github.com/andrelmlins/svelte-infinite-scroll",
   "author": "André Lins <andrelucas01@hotmail.com> (https://andrelmlins.github.io/)",
@@ -31,7 +31,7 @@
     "rollup-plugin-terser": "^7.0.0",
     "sirv-cli": "^0.4.4",
     "svelte": "^3.32.0",
-    "svelte-dts": "^0.3.3",
+    "svelte-dts": "^0.3.7",
     "svelte-jester": "1.1.5",
     "svelte-preprocess": "^4.7.4",
     "svelte-transpile-typescript": "^0.1.2",

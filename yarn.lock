@@ -4391,10 +4391,10 @@ supports-hyperlinks@^2.0.0:
     has-flag "^4.0.0"
     supports-color "^7.0.0"
 
-svelte-dts@^0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/svelte-dts/-/svelte-dts-0.3.3.tgz#91e6d7270c56a547f72ff7af44c07e4a55f63de2"
-  integrity sha512-PWw4+OK4EUdCgflsTRUHMrtf1+5If94tmAvuJeq3CF1aNhiwmp7RtplMA0I7cNckbCnDJ/3gBpwFHdf7bQjVkQ==
+svelte-dts@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/svelte-dts/-/svelte-dts-0.3.7.tgz#ad1df3f5d23c72c0fc5dfbb5b9fdcfeb3b43d27f"
+  integrity sha512-gy5jIgL8R9IDBwfqvvzPwamEJufQyieEaS5D9drvtOi8rpWlg7ZuAnJ73ZjJK71o8ik8hIM3zx2XiPlLTDb/tQ==
   dependencies:
     commander "^7.1.0"
     recursive-readdir "^2.2.2"

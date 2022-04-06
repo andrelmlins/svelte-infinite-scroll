@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount, onDestroy, createEventDispatcher } from "svelte";
 
-  export let threshold: number = 0;
-  export let horizontal: boolean = false;
+  export let threshold: number | undefined = 0;
+  export let horizontal: boolean | undefined = false;
   export let elementScroll: HTMLElement | null = null;
-  export let hasMore: boolean = true;
-  export let reverse: boolean = false;
-  export let window: boolean = false;
+  export let hasMore: boolean | undefined = true;
+  export let reverse: boolean | undefined = false;
+  export let window: boolean | undefined = false;
 
   const dispatch = createEventDispatcher<{ loadMore: never }>();
 
@@ -33,9 +33,9 @@
     if (!hasMore) return;
 
     const target = e.target as HTMLElement;
-    const offset = calcOffset(target, reverse, horizontal);
+    const offset = calcOffset(target, reverse!, horizontal!);
 
-    if (offset <= threshold) {
+    if (offset <= threshold!) {
       if (!isLoadMore && hasMore) {
         dispatch("loadMore");
         beforeScrollHeight = target.scrollHeight;
