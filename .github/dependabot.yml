@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    # 0 desliga os PRs de atualização de versão; os de segurança continuam
+    open-pull-requests-limit: 0
+    groups:
+      seguranca:
+        applies-to: security-updates
+        patterns:
+          - "*"
